@@ -170,6 +170,7 @@ import { Navigation, Pagination,Autoplay  } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import BuyerLogin from "../../BuyerComponentes/BuyerLogin";
 
 const HousingUI = () => {
   const [projects, setProjects] = useState([]);
@@ -270,9 +271,9 @@ const HousingUI = () => {
             <h2 className="text-3xl pl-15 font-bold text-gray-800">Housing's Top Picks</h2>
             <p className="text-gray-600 pl-15 mt-2">Check out our handpicked projects</p>
           </div>
-          <button className=" lg:mt-0 bg-indigo-600 text-white px-2 py-2 rounded hover:bg-indigo-700 transition">
+          {/* <button className=" lg:mt-0 bg-indigo-600 text-white px-2 py-2 rounded hover:bg-indigo-700 transition">
             View All Projects
-          </button>
+          </button> */}
         </div>
 
         {projects.length === 0 ? (
@@ -281,7 +282,7 @@ const HousingUI = () => {
 //          <Swiper
 //   modules={[Navigation, Pagination]}
 //   spaceBetween={20}
-//   slidesPerView={1} // ✅ ek slide me ek card
+//   slidesPerView={1} //  ek slide me ek card
 //   navigation
 //   pagination={{ clickable: true }}
 //   breakpoints={{
@@ -321,7 +322,8 @@ const HousingUI = () => {
         {project.status?.toUpperCase()}
       </p>
       <button className="mt-4 bg-indigo-600 text-white px-5 py-2 rounded hover:bg-indigo-700 w-fit transition">
-        View Details
+        Contact
+        {/* <BuyerLogin/> */}
       </button>
     </div>
 
@@ -335,7 +337,6 @@ const HousingUI = () => {
     </div>
   </div>
 </SwiperSlide>
-
   ))}
 </Swiper>
 

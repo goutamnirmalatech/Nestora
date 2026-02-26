@@ -18,10 +18,7 @@ function Home() {
     <ServiceCards/>
     <Explore/>
     <Footer/>
-    </div>
-    
-
-  
+    </div>  
   )
 }
 

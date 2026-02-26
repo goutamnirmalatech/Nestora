@@ -12,7 +12,7 @@ const HousingUI = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:7000/viewsellerproperties")
+      .get("http://localhost:7000/recentproperties")
       .then((res) => {
         const data = Array.isArray(res.data) ? res.data : res.data.sellers || [];
         setProjects(data);
@@ -88,24 +88,28 @@ const HousingUI = () => {
               className="mySwiper"
             >
               {projects.map((project, i) => (
-                <SwiperSlide key={i}>
-                  <div className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer transition w-full h-80">
-                    <img
-                      src={`http://localhost:7000/uploads/${project.photo}`}
-                      alt={project.type}
-                      className="w-full h-full object-cover"
-                    />
+                // <SwiperSlide key={i}>
+                //   <div className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer transition w-full h-80">
+                //     <img
+                //       src={`http://localhost:7000/uploads/${project.photo}`}
+                //       alt={project.type}
+                //       className="w-full h-full object-cover"
+                //     />
 
-                    <div className="p-5">
-                      <h3 className="text-lg font-semibold text-gray-800">{project.type}</h3>
-                      <p className="text-gray-500 text-sm">{project.category}</p>
-                      <p className="text-gray-500 text-sm">{project.location}, {project.city}</p>
-                      <p className={`font-bold mt-2 ${project.status === "available" ? "text-green-600" : "text-red-600"}`}>
-                        {project.status?.toUpperCase()}
-                      </p>
-                    </div>
-                  </div>
-                </SwiperSlide>
+                //     <div className="p-5">
+                //       <h3 className="text-lg font-semibold text-gray-800">{project.type}</h3>
+                //       <p className="text-gray-500 text-sm">{project.category}</p>
+                //       <p className="text-gray-500 text-sm">{project.location}, {project.city}</p>
+                //       <p className={`font-bold mt-2 ${project.status === "available" ? "text-green-600" : "text-red-600"}`}>
+                //         {project.status?.toUpperCase()}
+                //       </p>
+                //     </div>
+                //   </div>
+                // </SwiperSlide>
+                
+              <SwiperSlide key={i}>
+                <Websitecards project={project} />
+              </SwiperSlide>
               ))}
             </Swiper>
           )}

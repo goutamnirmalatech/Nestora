@@ -35,10 +35,10 @@ const CategoryPage = () => {
        <ServiceCards/>
 
       <h2 className="text-2xl font-bold mb-4 pl-31 bg-gray-100">{category.toUpperCase()} Properties</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pl-31 mb-12 bg-gray-100">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pl-31 mb-12  bg-gray-100">
         {properties.length > 0 ? (
           properties.map((prop) => (
-            <div key={prop.propertyid} className="border rounded-lg p-4 shadow-md">
+            <div key={prop.propertyid} className="border rounded-lg p-4 shadow-md h-[450] gap-10">
               <img
                 src={`http://localhost:7000/uploads/${prop.photo}`}
                 alt={prop.type}
